@@ -1,23 +1,23 @@
 const { describe, it, expect, beforeAll, afterAll } = require('@jest/globals')
-const { User } = require('.')
+const { Card } = require('.')
 const { db } = require('../db/config')
 
-let user
+let card
 
 beforeAll(async () => {
   await db.sync({ force: true })
-  user = await User.create({ username: 'gandalf' })
+  card = await Card.create({ name: 'fireball' })
 })
 
 afterAll(async () => await db.sync({ force: true }))
 
-describe('User', () => {
+describe('card', () => {
   it('has an id', async () => {
-    expect(user).toHaveProperty('id')
+    expect(card).toHaveProperty('id')
   })
 
-  it('is username correct', async () => {
-    expect(user.username).toBe('gandalf')
+  it('is name correct', async () => {
+    expect(card.name).toBe('fireball')
   })
 
  

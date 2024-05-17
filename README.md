@@ -91,7 +91,6 @@ classDiagram
 ```
 
 ### Attacks
-
 ```mermaid
 classDiagram
   class Attack {
